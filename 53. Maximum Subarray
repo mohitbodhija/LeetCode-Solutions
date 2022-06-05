@@ -5,7 +5,7 @@ public:
         int cursum =nums[0];
         
         for(int i=1;i<nums.size();i++)
-        {
+        { 
             if(cursum>=0)
             cursum += nums[i];
             else
