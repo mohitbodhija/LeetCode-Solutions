@@ -1,0 +1,28 @@
+Approach -1
+
+xs = [0] * 26
+string = input("Enter the word ")
+l = len(string)
+for letter in string:
+    a = ord(letter)
+    xs[a-97] +=1
+for i in range(26):
+    if(xs[i]>0):
+        print(chr(i+97),xs[i])
+        
+Approach -2 
+
+string = input("Enter the word ")
+
+d = {}
+
+for i in string:
+    if i in d:
+        d[i]+=1
+    else:
+        d[i] =1
+for i in string:
+    if (d[i]!=0):
+        print(i,d[i])
+        d[i]=0
+    
