@@ -1,0 +1,20 @@
+string = input("Enter the set of bracket")
+
+def check(bracket):
+        stack = []
+        for letter in bracket:
+            if letter in ["(", "{", "["]:
+                stack.append(letter)
+            else:
+                if len(stack)!=0:
+                    a= stack.pop()
+                    if  letter !=a:
+                         break
+                
+        if len(stack) ==0:
+             print("True")
+        else:
+            print("False")
+       
+    
+check(string)
