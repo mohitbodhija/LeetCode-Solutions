@@ -1,0 +1,14 @@
+string = input("Enter the word ")
+c=1
+f=[]
+
+for i in range(len(string)-1):
+    if string[i]==string[i+1]:
+        c+=1
+    else:
+        f.append(string[i])
+        f.append(c)
+        c=1
+f.append(string[i+1])
+f.append(c)
+print(f)
