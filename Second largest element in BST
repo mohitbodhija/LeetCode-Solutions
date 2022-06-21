@@ -1,0 +1,54 @@
+Approach 1
+class TreeNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None 
+
+def inorderTraversal(root):
+    answer = []
+
+    inorderTraversalUtil(root, answer)
+    return answer
+
+def inorderTraversalUtil(root, answer):
+
+    if root is None:
+        return
+
+    inorderTraversalUtil(root.left, answer)
+    answer.append(root.val)
+    inorderTraversalUtil(root.right, answer)
+    return
+
+
+root = TreeNode(50)
+root.left = TreeNode(30)
+root.right = TreeNode(20)
+root.left.left = TreeNode(40)
+root.left.right = TreeNode(5)
+
+a =(inorderTraversal(root))
+print(a[-2])
+
+Approch - 2
+
+class solution :
+    def largest(self,root):
+        current = root
+        while current:
+            if not current.right:
+                return current.val
+            current = current.right
+            
+    def second_largest(self,root):
+        current = root
+        while current:
+            if(not current.right and current.left):
+                return largest(current.left)
+            if(current.right and not current.right.left and current.right.right):
+                return current.val
+            
+
+
+ 
